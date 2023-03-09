@@ -1,0 +1,64 @@
+---
+import Navbar from "./navbar.astro";
+
+---
+<style>
+    header{
+        background-color: #ea834c;
+        height: 39rem;
+        width: 100%;
+    }
+    div{
+        margin-top: 2rem;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+        grid-template-areas: "titulo img";
+        align-items: center;
+        justify-content: space-around;
+        height: 70%;
+    }
+    p{
+        color: white;
+        width: 32rem;
+        font-weight: 900;
+        grid-area: titulo;
+        font-size: 4.6rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+    img{
+        grid-area: img;
+        width: rem;
+        margin: 0 auto;
+    }
+    @media screen and (max-width:58rem){
+        div{
+            grid-template-columns: max-content;
+            grid-template-areas: "title" "img";
+        }
+        p{
+            width: 320px;
+            font-size: 3.5rem;
+            grid-area: title;
+            word-wrap: break-word;
+        }
+        img{
+            width: 320px;
+            grid-area: img;
+        }
+        header{
+            height: 53rem;
+        }
+    }
+</style>
+
+<header>
+    <Navbar/>
+    <div>
+        <p>
+            ¿Que son los hosting? Tipos, característica y ¡mucho más!
+        </p>
+        <img src="/server-header.png" alt="">
+    </div>
+</header>

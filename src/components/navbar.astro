@@ -1,0 +1,110 @@
+---
+import Switch from "./switch.astro";
+import Menu from "./menu.astro";
+---
+
+<style>
+  div {
+    width: 90%;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-template-areas: "title button";
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    height: 70px;
+  }
+  .menu{
+    /* display: none; */
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    right: 1vw;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #efca6e;
+  }
+  span {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 1.3px;
+    grid-area: title;
+  }
+  .section {
+    grid-area: button;
+  }
+  .dropdown {
+    position: relative;
+    margin-right: 5rem;
+  }
+  .dropdown > a {
+    color: white;
+    text-decoration: none;
+  }
+  .dropdown .temas {
+    display: none;
+    position: absolute;
+    left: 1rem;
+    bottom: -8.2rem;
+    width: 8rem;
+    height: max-content;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0);
+  }
+  .dropdown:hover .temas {
+    display: block;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: left;
+  }
+  li a {
+    color: black;
+    display: block;
+    padding: 9px;
+    text-decoration: none;
+  }
+  li a:hover {
+    background-color: #ea834c;
+    color: white;
+  }
+  @media screen and (max-width:63rem){
+    .section{
+      display: none;
+    }
+    div{
+      justify-content: space-between;
+    }
+  }
+</style>
+
+<nav>
+  <div>
+    <span> Landing Page</span>
+    <div class="section">
+      <div class="dropdown">
+        <a href="#">Temas</a>
+        <div class="temas">
+          <ul>
+            <li><a href="#">Tema</a></li>
+            <li><a href="#">Tema</a></li>
+            <li><a href="#">Tema</a></li>
+            <li><a href="#">Tema</a></li>
+          </ul>
+        </div>
+      </div>
+      <Switch/>
+    </div>
+    <Menu class="menu"/>
+  </div>
+</nav>

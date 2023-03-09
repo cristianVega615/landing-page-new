@@ -1,0 +1,30 @@
+---
+import Main from "../layouts/main.astro";
+import Header from "../components/header.astro";
+import Aside from "../components/aside.astro";
+/**
+ * Component Script (Typescript / Javascript)
+ */
+
+---
+<style is:global>
+	*,
+	*::after,
+	*::before{
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+	body{
+		background-color: #e2e2e29b;
+		font-family: 'Roboto', sans-serif;
+	}
+</style>
+
+
+<!-- Componente Template -->
+
+<Main>
+	<Header/>	
+	<Aside/>
+</Main>
