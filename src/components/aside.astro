@@ -3,8 +3,9 @@
 <style>
     aside{
         display: flex;
-        flex-direction: row;
-        justify-content: center;
+        /* display: none; */
+        flex-direction: column;
+        justify-content: space-evenly;
         align-items: center;
         position: fixed;
         z-index: 998;
@@ -14,20 +15,35 @@
         right: 0;
         width: 100%;
         background-color: #efca6e;
+        clip-path: circle(0 at 110% 110%);
+        transition: clip-path 1s ease-in-out;
     }
     a{
         display: block;
         text-decoration: none;
-        color: #ff8e57;
+        color: black;
         font-weight: 700;
-        font-size: 3em;
+        font-size: 2.4em;
+        margin-bottom: 1em;
+        text-align: center;
+        transition: all 0.3 ease;
     }
 </style>
-<aside>
+<aside class="aside">
   <nav>
-    <a href="#">Tema</a>
-    <a href="#">Tema</a>
-    <a href="#">Tema</a>
-    <a href="#">Tema</a>
+    <a href="#hosting-share">Hosting Compartido</a>
+    <a href="#">Servidores Privados</a>
+    <a href="#">Servidores Dedicados</a>
+    <a href="#">Serivodres Cloud</a>
   </nav>
 </aside>
+
+<script>
+  document.addEventListener("click", (event) => {
+    let nodo = event.target as HTMLUnknownElement
+    if(nodo.matches(".aside a")){
+      document.querySelector(".aside").classList.remove("menu-active")
+      document.querySelector(".hamburger").classList.remove("is-active")
+    }
+  })
+</script>

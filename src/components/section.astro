@@ -1,0 +1,64 @@
+---
+import Cards from './cards.astro';
+import Acordion from './acordion.astro';
+interface Cards{
+    title: string;
+    lista: string[];
+}
+interface Props{
+    title: string;
+    id: string;
+    info: string;
+    ventajas: Cards;
+    desventajas: Cards;
+}
+const { title , id,info, ventajas, desventajas } = Astro.props;
+---
+<style>
+    
+    div{
+        width: 92vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 2.6rem;
+    }
+    h2{
+        font-size: 3em;
+        font-weight: 900;
+        margin-left: 3rem;
+    }
+    p{
+        width: 87vw;
+        margin: 0 auto;
+        margin-top: 2rem;
+        font-size: 1.3rem;
+    }
+    .acordion{
+        display: none;
+    }
+    @media screen and (max-width:58rem){
+        p{
+            width: 80vw;
+        }
+        div{
+            display: none;
+        }
+        .acordion{
+            display: block;
+        }
+    }
+
+</style>
+<section id={id}>
+    <h2>{title}</h2>
+    <p>{info}</p>
+    <div>
+        <Cards title={ventajas.title} lista={ventajas.lista}/>
+        <Cards title={desventajas.title} lista={ventajas.lista}/>
+    </div>
+    <div class="acordion"> 
+        <Acordion title={ventajas.title} lista={ventajas.lista}/>
+        <Acordion title={desventajas.title} lista={desventajas.lista}/>
+    </div>
+</section>

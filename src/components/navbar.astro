@@ -15,7 +15,6 @@ import Menu from "./menu.astro";
     height: 70px;
   }
   .menu{
-    /* display: none; */
     position: fixed;
     z-index: 999;
     bottom: 1vh;
@@ -28,10 +27,12 @@ import Menu from "./menu.astro";
     justify-content: center;
     align-items: center;
     background-color: #efca6e;
+    visibility: hidden;
+    border: solid 4px black;
   }
   span {
     font-size: 2.5rem;
-    font-weight: 900;
+    font-weight: 600;
     color: white;
     letter-spacing: 1.3px;
     grid-area: title;
@@ -46,15 +47,16 @@ import Menu from "./menu.astro";
   .dropdown > a {
     color: white;
     text-decoration: none;
+    font-size: 1.2rem;
   }
   .dropdown .temas {
     display: none;
     position: absolute;
     left: 1rem;
-    bottom: -8.2rem;
-    width: 8rem;
+    bottom: -8.8rem;
+    width: 12rem;
     height: max-content;
-    border-radius: 1rem;
+    border-radius: 9px;
     overflow: hidden;
     background-color: white;
     box-shadow: 2px 2px 5px rgba(0, 0, 0);
@@ -96,10 +98,10 @@ import Menu from "./menu.astro";
         <a href="#">Temas</a>
         <div class="temas">
           <ul>
-            <li><a href="#">Tema</a></li>
-            <li><a href="#">Tema</a></li>
-            <li><a href="#">Tema</a></li>
-            <li><a href="#">Tema</a></li>
+            <li><a href="#hosting-share">Hosting Compartido</a></li>
+            <li><a href="#">Servidores Privados</a></li>
+            <li><a href="#">Servidores Dedicados</a></li>
+            <li><a href="#">Serivodres Cloud</a></li>
           </ul>
         </div>
       </div>

@@ -2,9 +2,14 @@
 import Main from "../layouts/main.astro";
 import Header from "../components/header.astro";
 import Aside from "../components/aside.astro";
+import Section from "../components/section.astro";
+
+import { hostingCompartido } from "../utils/infomarcion.js"
 /**
  * Component Script (Typescript / Javascript)
  */
+
+ const { title , id , info, ventajas, desventajas } = hostingCompartido;
 
 ---
 <style is:global>
@@ -15,10 +20,24 @@ import Aside from "../components/aside.astro";
 		margin: 0;
 		box-sizing: border-box;
 	}
+	html{
+		scroll-behavior: smooth;
+	}
 	body{
 		background-color: #e2e2e29b;
 		font-family: 'Roboto', sans-serif;
 	}
+
+    .menu-active{
+        display: flex;
+		clip-path: circle(100% at center
+		);
+    }
+	.btn-active{
+		background-color: #ea834c;
+		visibility: visible;
+	}
+
 </style>
 
 
@@ -27,4 +46,6 @@ import Aside from "../components/aside.astro";
 <Main>
 	<Header/>	
 	<Aside/>
+	<Section title={title} id={id
+	} info={info} ventajas={ventajas} desventajas={desventajas} />
 </Main>

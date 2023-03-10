@@ -1,0 +1,48 @@
+---
+const { title, lista } = Astro.props;
+---
+
+<style>
+  article {
+    border-radius: 6px;
+    background: #f3f2f2;
+    box-shadow: 0 0 10px -3px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    padding: 1.5em;
+    margin: 60px auto;
+    border-left: 4px solid #ea834c;
+  }
+  label {
+    display: inline-block;
+    color: #ea834c;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.2rem;
+  }
+  div {
+    display: grid;
+    grid-template-rows: var(--rows, 0fr);
+    transition: .3s grid-template-rows;
+  }
+  input{
+    display: none;
+  }
+  ul {
+    overflow: hidden;
+  }
+  li {
+    margin: 0.9em 1.1em;
+  }
+  article:has(:checked){
+    --rows: 1fr;
+  }
+</style>
+
+<article>
+  <label>{title} <input type="checkbox" /></label>
+  <div>
+    <ul>
+      {lista.map((item) => <li>{item}</li>)}
+    </ul>
+  </div>
+</article>

@@ -2,11 +2,37 @@
     const {class: className} = Astro.props;
 ---
 <style>
-    
+    /* .hamburger{
+        display: none !important;
+    } */
 </style>
-<button class={`hamburger ${className} hamburger--slider`} id="none" type="button">
+<button class={`hamburger .none ${className} hamburger--slider`}  type="button">
   <span class="hamburger-box">
     <span class="hamburger-inner"></span>
   </span>
 
 </button>
+
+<script>
+    let aside = document.querySelector(".aside");
+    let btn = document.querySelector(".hamburger") as HTMLButtonElement;
+    btn.addEventListener("click", (event) => {
+        aside.classList.toggle("menu-active")
+        btn.classList.toggle("is-active")
+    })
+    
+    let bool =window.matchMedia('(max-width:58rem)'); 
+
+    const responsive = (e) => {
+        if(e.matches){
+            btn.classList.add("btn-active")
+        } else {
+            btn.classList.remove("btn-active")
+            aside.classList.remove("menu-active")
+            btn.classList.remove("is-active")
+        }
+
+    }
+
+    bool.addEventListener("change", responsive)
+</script>
