@@ -3,13 +3,12 @@ import Main from "../layouts/main.astro";
 import Header from "../components/header.astro";
 import Aside from "../components/aside.astro";
 import Section from "../components/section.astro";
+import Footer from "../components/footer.astro";
 
-import { hostingCompartido } from "../utils/infomarcion.js"
+import { hostingCompartido, servidoresPrivados, servidoresDedicados, servidoresCloud } from "../utils/infomarcion.js"
 /**
  * Component Script (Typescript / Javascript)
  */
-
- const { title , id , info, ventajas, desventajas } = hostingCompartido;
 
 ---
 <style is:global>
@@ -37,7 +36,10 @@ import { hostingCompartido } from "../utils/infomarcion.js"
 		background-color: #ea834c;
 		visibility: visible;
 	}
-
+	#dark{
+		background-color: rgb(49, 34, 49);
+		box-shadow: red;
+	}
 </style>
 
 
@@ -46,6 +48,9 @@ import { hostingCompartido } from "../utils/infomarcion.js"
 <Main>
 	<Header/>	
 	<Aside/>
-	<Section title={title} id={id
-	} info={info} ventajas={ventajas} desventajas={desventajas} />
+	<Section obj={hostingCompartido} />
+	<Section obj={servidoresPrivados} />
+	<Section obj={servidoresDedicados} />	
+	<Section obj={servidoresCloud}/>
+	<Footer />
 </Main>

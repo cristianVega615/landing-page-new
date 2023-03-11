@@ -5,14 +5,15 @@ interface Cards{
     title: string;
     lista: string[];
 }
-interface Props{
+interface Cast{
     title: string;
     id: string;
     info: string;
     ventajas: Cards;
     desventajas: Cards;
 }
-const { title , id,info, ventajas, desventajas } = Astro.props;
+const { obj } = Astro.props;
+let { title , id , info, ventajas, desventajas } = obj as Cast;
 ---
 <style>
     
@@ -22,6 +23,7 @@ const { title , id,info, ventajas, desventajas } = Astro.props;
         align-items: center;
         justify-content: space-around;
         margin-top: 2.6rem;
+        margin-bottom: 10rem;
     }
     h2{
         font-size: 3em;
@@ -55,7 +57,7 @@ const { title , id,info, ventajas, desventajas } = Astro.props;
     <p>{info}</p>
     <div>
         <Cards title={ventajas.title} lista={ventajas.lista}/>
-        <Cards title={desventajas.title} lista={ventajas.lista}/>
+        <Cards title={desventajas.title} lista={desventajas.lista}/>
     </div>
     <div class="acordion"> 
         <Acordion title={ventajas.title} lista={ventajas.lista}/>
