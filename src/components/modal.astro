@@ -1,0 +1,48 @@
+---
+---
+
+<style>
+  dialog {
+    margin: auto;
+    width: 420px;
+    height: 70vh;
+    border: none;
+    border-radius: 10px;
+    transition: all 6s ease-in;
+  }
+  dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.55);
+  }
+  .dialog-close{
+    text-align: right;
+  }
+
+  span{
+    width: 15px;
+    height: 15px;
+  }
+
+</style>
+
+<dialog class="dialog">
+    <div class="dialog-close">
+        <button class="hamburger hamburger--collapse is-active btn-cerrar" type="button">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+    </div>
+</dialog>
+
+<script>
+  let modal = document.querySelector(".dialog") as HTMLDialogElement;
+  let btnClose = document.querySelector(".btn-cerrar") as HTMLButtonElement;
+//   setTimeout(() => {
+//     modal.showModal();
+//   }, 2000);
+    modal.showModal(    )
+
+  btnClose.addEventListener("click", () => {
+    modal.close();
+  });
+</script>

@@ -1,4 +1,5 @@
 ---
+import Modal from "../components/modal.astro";
 import Main from "../layouts/main.astro";
 import Header from "../components/header.astro";
 import Aside from "../components/aside.astro";
@@ -11,6 +12,7 @@ import { hostingCompartido, servidoresPrivados, servidoresDedicados, servidoresC
  */
 
 ---
+
 <style is:global>
 	*,
 	*::after,
@@ -40,12 +42,12 @@ import { hostingCompartido, servidoresPrivados, servidoresDedicados, servidoresC
 		background-color: rgb(49, 34, 49);
 		box-shadow: red;
 	}
+	
 </style>
-
 
 <!-- Componente Template -->
 
-<Main>
+<Main title="Landing Page">
 	<Header/>	
 	<Aside/>
 	<Section obj={hostingCompartido} />
@@ -53,4 +55,5 @@ import { hostingCompartido, servidoresPrivados, servidoresDedicados, servidoresC
 	<Section obj={servidoresDedicados} />	
 	<Section obj={servidoresCloud}/>
 	<Footer />
+	<!-- <Modal /> -->
 </Main>
