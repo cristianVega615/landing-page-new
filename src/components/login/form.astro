@@ -1,0 +1,186 @@
+---
+---
+
+<style>
+  main {
+    width: 100vw;
+    height: 100vh;
+  }
+  nav {
+    height: 4.6em;
+    margin: 0 2.8em;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+  }
+  .back {
+    display: block;
+    width: 5.9em;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: #ea834c;
+    padding: 0.8em 0.6em;
+    border-radius: 30px;
+  }
+  .form {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+  }
+
+  form {
+    width: 39%;
+    height: 60vh;
+    min-width: 320px;
+    border: 3.2px solid black;
+    border-radius: 20px;
+    background: rgba(206, 168, 168, 0.095);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  form > * {
+    display: block;
+    text-align: center;
+  }
+  form > input {
+    margin: 0 auto;
+  }
+  .container-google,
+  .container-facebook {
+    margin: 0 auto;
+    width: 20vw;
+    min-width: 200px;
+    margin: 1em auto;
+    padding: 0.6em;
+    border-radius: 20px;
+    z-index: 200;
+  }
+
+  .container-google {
+    background-color: white;
+  }
+  .container-facebook {
+    background-color: rgb(62, 62, 189);
+  }
+
+  .google,
+  .facebook {
+    width: 200px;
+    height: 30px;
+    text-decoration: none;
+    margin: 0 auto;
+    margin-top: 2em;
+    color: black;
+  }
+  .google {
+  }
+  .svg-google {
+    position: relative;
+    top: 2px;
+    margin-right: 0.3em;
+  }
+  .svg-face {
+    margin: 0;
+    position: relative;
+    top: 4px;
+    margin-right: 0.3em;
+  }
+  .logo-emp {
+    width: 100px;
+    margin: 0 auto;
+  }
+  button {
+    margin: 0 auto;
+    cursor: pointer;
+    font-weight: 700;
+    font-family: Helvetica, "sans-serif";
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    padding: 5px 15px;
+    border-radius: 100px;
+    background: #ea834c;
+    border: 1px solid transparent;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 15px;
+  }
+
+  button:hover {
+    background: #ffe960;
+  }
+
+  button > svg {
+    width: 34px;
+    margin-left: 10px;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  }
+
+  button:hover svg {
+    -webkit-transform: translateX(5px);
+    -ms-transform: translateX(5px);
+    transform: translateX(5px);
+  }
+
+  button:active {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+</style>
+
+<main>
+  <nav>
+    <div class="nav-link">
+      <a class="back" href="/#">Volver</a>
+    </div>
+  </nav>
+  <div class="form">
+    <form class="form-login" action="http://localhost:3000" method="POST">
+      <img class="logo-emp" src="/couchbase.svg" alt="" />
+      <h2>Log in</h2>
+      <div class="container-google">
+        <a href="" class="google"
+          ><img class="svg-google" src="/google-icon.svg" alt="" />Google</a
+        >
+      </div>
+      <div class="container-facebook">
+        <a href="" class="facebook"
+          ><img class="svg-face" src="/facebook-icon.svg" alt="" />Facebook</a
+        >
+      </div>
+      <input class="email" type="email" name="email" />
+      <input class="password" type="text" name="password" />
+      <button class="btn-login">
+        <span>Continue</span>
+        <svg
+          width="34"
+          height="34"
+          viewBox="0 0 74 74"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="37" cy="37" r="35.5" stroke="black" stroke-width="3"
+          ></circle>
+          <path
+            d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"
+            fill="black"></path>
+        </svg>
+      </button>
+    </form>
+  </div>
+</main>

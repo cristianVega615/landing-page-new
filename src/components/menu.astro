@@ -23,17 +23,33 @@
     
     let bool =window.matchMedia('(max-width:58rem)'); 
 
-    const responsive = (e) => {
+    export const responsive = (e) => {
         if(e.matches){
             btn.classList.add("btn-active")
-            console.log("xd")
         } else {
             btn.classList.remove("btn-active")
             aside.classList.remove("menu-active")
             btn.classList.remove("is-active")
         }
-
     }
-
+    
+    window.addEventListener("load", () => {
+    if (
+        bool.matches ||
+      navigator.userAgent.match(/Android/i) ||
+      navigator.userAgent.match(/webOS/i) ||
+      navigator.userAgent.match(/iPhone/i) ||
+      navigator.userAgent.match(/iPad/i) ||
+      navigator.userAgent.match(/iPod/i) ||
+      navigator.userAgent.match(/BlackBerry/i) ||
+      navigator.userAgent.match(/Windows Phone/i)
+    ) {
+      btn.classList.add("btn-active");
+    } else {
+      btn.classList.remove("btn-active");
+      aside.classList.remove("menu-active");
+      btn.classList.remove("is-active");
+    }
+  });
     bool.addEventListener("change", responsive)
 </script>

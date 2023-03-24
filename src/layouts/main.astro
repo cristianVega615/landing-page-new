@@ -1,4 +1,6 @@
 ---
+import Loader from "../components/loader.astro";
+
 const { title } = Astro.props;
 ---
 
@@ -23,11 +25,13 @@ const { title } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
+    <Loader/>
     <slot />
-   
+    <script src="../scripts/loader.ts"></script>
   </body>
 </html>

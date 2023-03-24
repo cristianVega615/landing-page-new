@@ -6,54 +6,61 @@ import Aside from "../components/aside.astro";
 import Section from "../components/section.astro";
 import Footer from "../components/footer.astro";
 
-import { hostingCompartido, servidoresPrivados, servidoresDedicados, servidoresCloud } from "../utils/infomarcion.js"
+import {
+  hostingCompartido,
+  servidoresPrivados,
+  servidoresDedicados,
+  servidoresCloud,
+} from "../utils/infomarcion.js";
 /**
  * Component Script (Typescript / Javascript)
  */
-
 ---
 
 <style is:global>
-	*,
-	*::after,
-	*::before{
-		padding: 0;
-		margin: 0;
-		box-sizing: border-box;
-	}
-	html{
-		scroll-behavior: smooth;
-	}
-	body{
-		background-color: #e2e2e29b;
-		font-family: 'Roboto', sans-serif;
-	}
+  *,
+  *::after,
+  *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #e2e2e29b;
+    font-family: "Roboto", sans-serif;
+  }
 
-    .menu-active{
-        display: flex;
-		clip-path: circle(100% at center
-		);
-    }
-	.btn-active{
-		background-color: #ea834c;
-		visibility: visible;
-	}
-	#dark{
-		background-color: rgb(49, 34, 49);
-		box-shadow: red;
-	}
-	
+  .menu-active {
+    display: flex;
+    clip-path: circle(100% at center);
+  }
+  .btn-active {
+    background-color: #ea834c;
+    visibility: visible;
+  }
+  #dark {
+    background-color: rgb(49, 34, 49);
+    box-shadow: red;
+  }
 </style>
 
 <!-- Componente Template -->
 
 <Main title="Landing Page">
-	<Header/>	
-	<Aside/>
-	<Section obj={hostingCompartido} />
-	<Section obj={servidoresPrivados} />
-	<Section obj={servidoresDedicados} />	
-	<Section obj={servidoresCloud}/>
-	<Footer />
-	<!-- <Modal /> -->
+  <Header />
+  <Aside />
+  <Section obj={hostingCompartido} />
+  <Section obj={servidoresPrivados} />
+  <Section obj={servidoresDedicados} />
+  <Section obj={servidoresCloud} />
+  <Footer />
+  <!-- <Modal /> -->
 </Main>
+<script>
+  let aside = document.querySelector(".aside");
+  let btn = document.querySelector(".menu") as HTMLButtonElement;
+  let bool = window.matchMedia("(max-width:58rem)");
+</script>
