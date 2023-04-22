@@ -1,0 +1,27 @@
+---
+import Main from "../layouts/main.astro";
+import SignIn from "../components/login/formSignIn.astro";
+---
+
+<style is:global>
+
+	*,
+	*::after,
+	*::before{
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+	html{
+		scroll-behavior: smooth;
+		width: 100vw;
+		height: 100%;
+	}
+	body{
+		background-color: #e9c243;
+		font-family: 'Roboto', sans-serif;
+	}
+</style>
+<Main title="Login">
+    <SignIn />
+</Main>

@@ -38,8 +38,8 @@
   }
 
   form {
-    width: 32%;
-    height: 60vh;
+    width: 33%;
+    height: 74.3vh;
     min-width: 320px;
     border: 3.2px solid black;
     border-radius: 20px;
@@ -64,10 +64,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20vw;
-    min-width: 210px;
+    width: 2.5em;
     height: 2.5rem;
-    border-radius: 20px;
     text-decoration: none;
     color: black;
     cursor: pointer;
@@ -83,12 +81,10 @@
   .svg-google {
     position: relative;
     top: 1px;
-    margin-right: 0.3em;
   }
   .svg-face {
     position: relative;
-    top: 1px;
-    margin-right: 0.3em;
+    top: -0.8px;
   }
   .logo-emp {
     width: 100px;
@@ -102,7 +98,7 @@
     align-items: center;
     gap: 10px;
     margin-top: 1em;
-    height: 28vh;
+    height: 54vh;
   }
 
   .form__group {
@@ -110,7 +106,7 @@
     padding: 20px 0 0;
     margin-top: 10px;
     width: 100%;
-    max-width: 220px;
+    max-width: 180px;
   }
 
   .form__field {
@@ -213,8 +209,8 @@
     -ms-transform: scale(0.95);
     transform: scale(0.95);
   }
-  .btn-login{
-    margin-top: 1.5em;
+  .btn-sign{
+    margin-top: 2em;
   }
 </style>
 
@@ -225,41 +221,39 @@
     </div>
   </nav>
   <div class="form">
-    <form class="form-login" method="POST">
-      <img class="logo-emp" src="/couchbase.svg" alt="" />
-      <h2>Log in</h2>
+    <div class="content-sign">
       <div class="container-google">
-        <a href="" class="google"
-          ><img class="svg-google" src="/google-icon.svg" alt="" />Google</a
+        <a href="http://localhost:3002/api/facebook/signIn" class="google"
+          ><img class="svg-google" src="/google-icon.svg" alt="" /></a
         >
       </div>
       <div class="container-facebook">
         <a href="" class="facebook"
-          ><img class="svg-face" src="/facebook-icon.svg" alt="" />Facebook</a
+          ><img class="svg-face" src="/facebook-icon.svg" alt="" /></a
         >
       </div>
+    </div>
+    <form class="form-login" method="POST">
+      <img class="logo-emp" src="/couchbase.svg" alt="" />
+      <h2>Sign in</h2>
       <div class="inputs">
         <div class="form__group">
-          <input
-            required=""
-            placeholder="Email"
-            class="form__field email"
-            type="email"
-            name="email"
-          />
+          <input placeholder="Nombre" class="form__field nombre" type="text" name="nombre" />
+          <label class="form__label" for="name">Nombre</label>
+        </div>
+        <div class="form__group">
+          <input class="form__field apellido" placeholder="Apellido" type="text" name="apellido" />
+          <label class="form__label" for="name">Apellido</label>
+        </div>
+        <div class="form__group">
+          <input class="form__field email" type="email" placeholder="Email" name="email" />
           <label class="form__label" for="name">Email</label>
         </div>
         <div class="form__group">
-          <input
-            required=""
-            placeholder="Email"
-            class="form__field password"
-            type="password"
-            name="password"
-          />
-          <label class="form__label" for="name">Password</label>
+          <input class="form__field password" type="password" placeholder="Contraseña" name="password" />
+          <label class="form__label" for="name">Contraseña</label>
         </div>
-        <button class="btn-login">
+        <button class="btn-sign">
           <span>Continue</span>
           <svg
             width="34"
@@ -278,8 +272,4 @@
       </div>
     </form>
   </div>
-  <p>
-    ¿Aun no te has creado una nueva cuenta?, <a
-      href="http://localhost:3000/signIn">Has click aqui</a>
-  </p>
 </main>
